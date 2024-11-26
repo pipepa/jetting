@@ -1,0 +1,287 @@
+.hotelsCard.-type-1 {
+  .hotelsCard {
+    &__image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+
+      .cardImage__content .swiper-slide,
+      .cardImage__content > img {
+        transition: all 0.8s $easeOutQuart;
+      }
+
+      .swiper-slide-active {
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    &__title {
+      span {
+        background-image: linear-gradient(transparent 24px, black 20px);
+        background-size: 0;
+        background-repeat: no-repeat;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+      }
+    }
+  }
+
+  &:hover {
+    .hotelsCard {
+      &__image {
+        .cardImage__content > img,
+        .swiper-slide {
+          transform: scale(1.15);
+        }
+      }
+
+      &__title {
+        span {
+          background-size: 100% !important;
+        }
+      }
+    }
+  }
+
+  .cardImage-slider {
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.hotelsCard.-type-2 {
+
+  position: relative;
+  padding: 24px;
+  margin-top: 20px;
+  background: var(--color-light-5);
+  background-size: contain;
+  background-position: center;
+  color: rgb(16, 20, 25);
+  border-radius: 22px;
+  border-left: 3px solid var(--color-new-3);
+  box-shadow: 
+    rgba(0, 0, 0, 0.03) 0px -1px 0px 0px, 
+    rgba(0, 0, 0, 0.24) 0px 0px 1px 0px, 
+    rgba(0, 0, 0, 0.16) 0px 2px 1px -1px, 
+    rgba(0, 0, 0, 0.12) 0px 2px 4px 0px;
+  transition: all 0.2s;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding: 18px;
+  }
+
+  &:hover {
+    box-shadow: 
+      rgba(0, 0, 0, 0.03) 0px -1px 0px 0px, 
+      rgba(0, 0, 0, 0.2) 0px 0px 2px 0px, 
+      rgba(0, 0, 0, 0.12) 0px 4px 2px -2px, 
+      rgba(0, 0, 0, 0.16) 0px 4px 8px -1px;
+  }
+
+  .hotelsCard {
+    &__image {
+      overflow: hidden;
+      border-radius: 4px;
+
+      .cardImage__content .swiper-slide,
+      .cardImage__content > img {
+        transition: all 0.8s $easeOutQuart;
+      }
+
+      .swiper-slide-active {
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    &__title {
+      span {
+        background-image: linear-gradient(transparent 24px, black 20px);
+        background-size: 0;
+        background-repeat: no-repeat;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+      }
+    }
+  }
+
+  &:hover {
+    .hotelsCard {
+      &__image {
+        .cardImage__content > img,
+        .swiper-slide {
+          transform: scale(1.15);
+        }
+      }
+
+      &__title {
+        span {
+          background-size: 100% !important;
+        }
+      }
+    }
+  }
+
+  .cardImage-slider {
+    height: 100%;
+  }
+
+  .mySwiper {
+    height: 100%;
+  }
+}
+
+
+.carCard.-type-1 {
+  .carCard {
+    &__image {
+      overflow: hidden;
+      border-radius: 4px;
+
+      .cardImage__content .swiper-slide,
+      .cardImage__content > img {
+        transition: all 0.8s $easeOutQuart;
+      }
+
+      .swiper-slide-active {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+
+  &:hover {
+    .carCard {
+      &__image {
+        .cardImage__content > img,
+        .swiper-slide {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.cruiseCard.-type-1 {
+  .cruiseCard {
+    &__image {
+      overflow: hidden;
+      border-radius: 4px;
+
+      .cardImage__content .swiper-slide,
+      .cardImage__content > img {
+        transition: all 0.8s $easeOutQuart;
+      }
+
+      .swiper-slide-active {
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    &__title {
+      span {
+        background-image: linear-gradient(transparent 24px, black 20px);
+        background-size: 0;
+        background-repeat: no-repeat;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+      }
+    }
+  }
+
+  &:hover {
+    .cruiseCard {
+      &__image {
+        .cardImage__content > img,
+        .swiper-slide {
+          transform: scale(1.15);
+        }
+      }
+
+      &__title {
+        span {
+          background-size: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+.discountBadge {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  position: absolute;
+  right: -1.25rem;
+  bottom: -1.75rem;
+  //background-image: url('../../img/badges/discount.svg');
+  //background-size: cover;
+  //background-position: center;
+  //background-repeat: no-repeat;
+
+  @include media-below(xl) {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  @include media-below(lg) {
+    width: 5.25rem;
+    height: 5.25rem;
+  }
+
+  @include media-below(md) {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.badge-text {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  @include media-below(md) {
+    top: 38%;
+    left: 40%;
+  }
+}
+
+.hotel-image-filter {
+  filter: grayscale(50%) hue-rotate(10deg);
+  transition: filter 0.3s ease;
+}
+
+.hotel-image-filter:hover {
+  filter: none;
+}
+
+.providers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.provider {
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  @media (max-width: 540px) {
+      min-width: auto;
+  }
+}
+
+.provider:last-child {
+  margin-right: 0;
+}
+
+.providers > .provider:nth-last-child(n + 5) {
+  flex: none;
+  align-self: flex-start;
+}
+

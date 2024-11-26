@@ -1,0 +1,31 @@
+.watermark {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 12em;
+	line-height: normal;
+	color: var(--color-blue-3);
+	opacity: 0.5;
+	text-align: center;
+	text-transform: uppercase;
+	pointer-events: none;
+	z-index: 0;
+	-webkit-transform: translate(-50%, -50%) rotate(351deg);
+	-moz-transform: translate(-50%, -50%) rotate(351deg);
+	-o-transform: translate(-50%, -50%) rotate(351deg);
+	transform: translate(-50%, -50%) rotate(351deg);
+	transform-origin: center;
+  
+	@media (min-width: 1200px) and (max-width: 1400px) {
+		font-size: 10em;
+	}
+	@media screen and (max-width: 991px) {
+		font-size: 8em;
+	}
+	@media screen and (max-width: 767px) {
+		font-size: 6em;
+	}
+	@media screen and (max-width: 430px) {
+		font-size: 5em;
+	}
+}
