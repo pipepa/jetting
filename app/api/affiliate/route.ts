@@ -1,40 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
+import fs from 'fs/promises';
+import path from 'path';
 
 export async function POST(request: NextRequest) {
   try {
-    // Отримуємо дані, надіслані Impact.com
     const data = await request.json();
-    console.log('Отримані дані від Impact.com:', data); // Логування даних
+    console.log('Received data from POST request:', data);
 
-    // Визначаємо цільовий API (afficone.com)
-    const targetUrl = 'https://afficone.com/';
+    const filePath = path.join(process.cwd(), 'received_data.json');
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
 
-    // Надсилаємо оброблені дані на цільовий API
-    const response = await fetch(targetUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data), // Передаємо отримані дані без змін
+    return NextResponse.json({
+      message: 'Data received and saved successfully',
+      receivedData: data,
+      filePath: filePath
     });
-
-    // Перевіряємо статус відповіді
-    if (!response.ok) {
-      throw new Error(`Помилка при надсиланні даних: ${response.statusText}`);
-    }
-
-    console.log('Дані успішно переслані на afficone.com');
-
-    // Повертаємо відповідь Impact.com
-    return NextResponse.json({ message: 'Webhook оброблено успішно' });
   } catch (error) {
-    console.error('Помилка обробки вебхука:', error);
+    console.error('Error handling POST request:', error);
 
-    // Повертаємо помилку
     return NextResponse.json(
-      { error: 'Виникла помилка під час обробки вебхука' },
+      { error: 'An error occurred while processing the request' },
       { status: 500 }
     );
   }
 }
-
